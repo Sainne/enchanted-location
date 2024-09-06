@@ -1,0 +1,47 @@
+{
+  "description": "Omnilocation",
+  "supported_items": [
+    "minecraft:compass",
+    "minecraft:chainmail_leggings",
+    "minecraft:diamond_leggings",
+    "minecraft:golden_leggings",
+    "minecraft:iron_leggings",
+    "minecraft:leather_leggings",
+    "minecraft:netherite_leggings"
+  ],
+  "primary_items": [
+    "minecraft:compass"
+  ],
+  "weight": 3,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 31,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 8,
+  "slots": [
+    "any"
+  ],
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "sainne.enchantedlocation:event/coordinatehud"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:player",
+            "periodic_tick": 6
+          }
+        }
+      }
+    ]
+  }
+}
